@@ -29,13 +29,14 @@ namespace Task_1
 
         public static void ShowString(string somthing)
         {
-            Console.WriteLine(Person.somthing);
+            Console.WriteLine(somthing);
+            
 
         }
 
         public static void Show()
         {
-            Console.WriteLine($"Имя: {account}  rate: {rate} transtprt: {transport} days: {days} total: {total}");
+            Console.Write($"Имя: {account}  rate: {rate} transtprt: {transport} days: {days} total: {total}");
         }
         
 
@@ -56,11 +57,10 @@ namespace Task_1
 
                 //bool p1Ep2 = myField[i].Equals(type);
                 //Console.Write(p1Ep2);
-
-                Type type = myField[i];
-                    Person.ShowString(type);
-                    
-
+                //Console.WriteLine($"{ myField[i]} ");
+                string type = myField[i].ToString();
+               
+                Person.ShowString(type);
             }
            
            // Person.Show();
