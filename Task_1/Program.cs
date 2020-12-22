@@ -1,45 +1,99 @@
 ﻿using System;
-using System.Reflection;
 
 namespace Task_1
 {
-    
-    struct User
-    {
-        public const int dayMoney = 50;
-        public string name;
-        public string secondName;
-        public int transport;
-        public int day;
-
-        public void DisplayInfo()
-        {
-            // Console.WriteLine($"Name:{name} SecondName:{secondName} money:{dayMoney} transport:{transport} day:{day}");
-        }
-    }
-
 
     public class Person
     {
-        public const string account = "Anton Slutsky";
-        public static int rate = 25000;
-        public static int transport = 50000;
-        public static int days = 5;
-        public static int total = 175000;
-
-        public static void ShowString(string somthing)
+        // getter account
+        private static string account;
+        public string Account
         {
-            Console.WriteLine(somthing);
-            
-
+            get
+            {
+                return account;
+            }
+            set
+            {
+                account = value;
+            }
         }
 
-        public static void Show()
+        //getter dayMoney
+        private static int dayMoney;
+        public  int DayMoney
         {
-            Console.Write($"Имя: {account}  rate: {rate} transtprt: {transport} days: {days} total: {total}");
+            get
+            {
+                return dayMoney;
+            }
+            set
+            {
+                dayMoney = value;
+         
+            }
+        }
+        // getter transport
+        private static int transport;
+        public int Transport
+        {
+            get
+            {
+                return transport;
+            }
+            set
+            {
+                transport = value;
+            }
+        }
+
+        // getter days
+        private static int days;
+        public  int Days
+        {
+            get
+            {
+                return days;
+            }
+            set
+            {
+                days = value;
+            }
+        }
+
+        // constuctor Person
+        public Person() { account = "Mister"; dayMoney = 2500; transport = 500; days = 5; }
+        public Person(string n) { account = n; dayMoney = 2500; transport = 500; days = 5; }
+        public Person(string n, int d) { account = n; dayMoney = 2500; transport = 500; days = d; }
+
+
+        // total sum
+        public static int total()
+        {
+            return transport + days * dayMoney;  
+        }
+
+        // show info line by line  
+        public static void Show(object[] arr)
+        {
+            foreach(object key in arr)
+            {
+                //Console.WriteLine($"Имя: {account}\n расходы в день: {dayMoney}\n транспортные расходы: {transport}\n продолжительность командировки: {days}");
+                
+                Console.WriteLine(key);
+
+
+            }
+            
+            
+        }
+
+        // show info in line
+        public static void ShowString()
+        {
+            Console.WriteLine($"Имя: {account}  rate: {dayMoney} transtprt: {transport} days: {days}");
         }
         
-
     }
 
 
@@ -47,33 +101,40 @@ namespace Task_1
     {
         static void Main(string[] args)
         {
+            // Write array
+            Person[] people = new Person[5];
+            
+            Person Bill = new Person( "Bill",  3);
 
-            Type myType = typeof(Person);
-            FieldInfo[] myField = myType.GetFields();
-            for (int i = 0; i < myField.Length; i++)
-            {
-                //Type type = Person.rate.GetType();
-                //Console.Write($"{type} and {myField[i]}");
+            people[0] = Bill;
 
-                //bool p1Ep2 = myField[i].Equals(type);
-                //Console.Write(p1Ep2);
-                //Console.WriteLine($"{ myField[i]} ");
-                string type = myField[i].ToString();
-               
-                Person.ShowString(type);
-            }
-           
-           // Person.Show();
+            Person Jon = new Person("Jon", 5);
 
-            //User tom;
-            //tom.name = "Tom";
-            //tom.secondName = "Soer";
-            //tom.day = 3;
-            //tom.transport = 15;
-            //tom.DisplayInfo();
-            //Console.ReadKey();
+            people[1] = Jon;
+
+            people[2] = null;
+
+            Person Trump = new Person("Trump", 7);
+
+            people[3] = Trump;
+
+            Person Five = new Person();
+
+            people[4] = Five;
+
+
+
+
+            // Person.ShowString();
+
+            Person.Show(people);
+
+            // Console.WriteLine(Person.total());
+
+            //Person tom = new Person();
+            
         }
 
-       
+
     }
 }
