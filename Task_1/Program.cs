@@ -41,7 +41,7 @@ namespace Task_1
             {
                 return transport;
             }
-            set
+            set 
             {
                 transport = value;
             }
@@ -118,27 +118,32 @@ namespace Task_1
 
             people[4] = Five;
 
-
-
-
             // Person.ShowString();
 
             //Person.Show(people);
+
+
             foreach (Person key in people)
             {
                 //Console.WriteLine($"Имя: {account}\n расходы в день: {dayMoney}\n транспортные расходы: {transport}\n продолжительность командировки: {days}");
-                if(key == null) { } else
+                if (key == null) { }
+                else
                 {
                     Console.WriteLine(key.Show());
                 }
-                
-
-
             }
 
             // Console.WriteLine(Person.total());
 
             //Person tom = new Person();
+
+            int lastIndex = people.Length - 1;
+
+            Person lastObject = people[lastIndex];
+
+            lastObject.Transport = 700;
+
+            Console.WriteLine(lastObject.Transport);
 
         }
 
