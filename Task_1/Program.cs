@@ -6,7 +6,7 @@ namespace Task_1
     public class Person
     {
         // getter account
-        private static string account;
+        private  string account;
         public string Account
         {
             get
@@ -20,7 +20,7 @@ namespace Task_1
         }
 
         //getter dayMoney
-        private static int dayMoney;
+        private  int dayMoney;
         public  int DayMoney
         {
             get
@@ -34,7 +34,7 @@ namespace Task_1
             }
         }
         // getter transport
-        private static int transport;
+        private int transport;
         public int Transport
         {
             get
@@ -48,7 +48,7 @@ namespace Task_1
         }
 
         // getter days
-        private static int days;
+        private  int days;
         public  int Days
         {
             get
@@ -68,31 +68,27 @@ namespace Task_1
 
 
         // total sum
-        public static int total()
+        public int total()
         {
             return transport + days * dayMoney;  
         }
 
         // show info line by line  
-        public static void Show(object[] arr)
+        public string Show()
         {
-            foreach(object key in arr)
-            {
-                //Console.WriteLine($"Имя: {account}\n расходы в день: {dayMoney}\n транспортные расходы: {transport}\n продолжительность командировки: {days}");
-                
-                Console.WriteLine(key);
 
+            return ($"Имя: {account}\n расходы в день: {dayMoney}\n транспортные расходы: {transport}\n продолжительность командировки: {days}");
 
-            }
-            
-            
         }
+
 
         // show info in line
-        public static void ShowString()
-        {
-            Console.WriteLine($"Имя: {account}  rate: {dayMoney} transtprt: {transport} days: {days}");
-        }
+        //public override string ToString()
+        //{
+        //    return ($"Имя: {account}  rate: {dayMoney} transtprt: {transport} days: {days}");
+        //}
+
+       
         
     }
 
@@ -127,12 +123,23 @@ namespace Task_1
 
             // Person.ShowString();
 
-            Person.Show(people);
+            //Person.Show(people);
+            foreach (Person key in people)
+            {
+                //Console.WriteLine($"Имя: {account}\n расходы в день: {dayMoney}\n транспортные расходы: {transport}\n продолжительность командировки: {days}");
+                if(key == null) { } else
+                {
+                    Console.WriteLine(key.Show());
+                }
+                
+
+
+            }
 
             // Console.WriteLine(Person.total());
 
             //Person tom = new Person();
-            
+
         }
 
 
