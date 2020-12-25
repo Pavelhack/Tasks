@@ -81,8 +81,9 @@ namespace Task_2
     {
         public string Water = "water";
         public Substance Item = new Substance();
-        public enum Volume { centimeter };
+        public enum Volume {centimeter = 1};
 
+        //getter for Volume
         public class Getter
         {
             public Volume volume;
@@ -95,6 +96,12 @@ namespace Task_2
             {
                return volume;
             }
+        }
+
+        public double GetMass()
+        {
+            public Volume digital = Volume.centimeter;
+            public double mass = (Item.DansityOxygen + Item.DansityHydrogen) * digital
         }
             
     }
