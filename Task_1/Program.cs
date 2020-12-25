@@ -83,13 +83,13 @@ namespace Task_1
 
 
         // show info in line
-        //public override string ToString()
-        //{
-        //    return ($"Имя: {account}  rate: {dayMoney} transtprt: {transport} days: {days}");
-        //}
+        public override string ToString()
+        {
+            return ($"Имя: {account}  rate: {dayMoney} transtprt: {transport} days: {days}");
+        }
 
-       
-        
+
+
     }
 
 
@@ -118,32 +118,37 @@ namespace Task_1
 
             people[4] = Five;
 
-            // Person.ShowString();
-
             //Person.Show(people);
 
+           //**************************************
+            // show info in line
+            Console.WriteLine(Bill);
 
-            foreach (Person key in people)
-            {
-                //Console.WriteLine($"Имя: {account}\n расходы в день: {dayMoney}\n транспортные расходы: {transport}\n продолжительность командировки: {days}");
-                if (key == null) { }
-                else
-                {
-                    Console.WriteLine(key.Show());
-                }
-            }
+            //*************************************
+            //foreach (Person key in people)
+            //{
+            //    //Console.WriteLine($"Имя: {account}\n расходы в день: {dayMoney}\n транспортные расходы: {transport}\n продолжительность командировки: {days}");
+            //    if (key == null) { }
+            //    else
+            //    {
+            //        Console.WriteLine(key.Show());
+            //    }
+            //}
 
+            //*************************************
             // Console.WriteLine(Person.total());
 
+
+            //*************************************
             //Person tom = new Person();
 
-            int lastIndex = people.Length - 1;
+            //int lastIndex = people.Length - 1;
 
-            Person lastObject = people[lastIndex];
+            //Person lastObject = people[lastIndex];
 
-            lastObject.Transport = 700;
+            //lastObject.Transport = 700;
 
-            Console.WriteLine(lastObject.Transport);
+            //Console.WriteLine(lastObject.Transport);
 
         }
 
