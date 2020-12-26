@@ -111,6 +111,13 @@ namespace Task_2
             // ToString from class Material
             Material Item2 = new Material("wire", 0.03 );
             Console.WriteLine(Item2);
+
+            Substance.Matter = "copper";
+            Substance.Density = 8.96;
+
+            Material Item3 = new Material("wire", 0.03);
+            Console.WriteLine(Item3);
+
         }
     }
 }
