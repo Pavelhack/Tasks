@@ -4,113 +4,113 @@ namespace Task_2
 {
     class Substance
     {
-        private string matterOxygen ;
-        private double dansityOxygen ;
-        private string matterHydrogen;
-        private double dansityHydrogen;
+        private static string matter ;
+        private static double density ;
+        
 
 
         //getter matterOxygen
-        public string MatterOxygen
+        public static string Matter
         {
             get
             {
-                return matterOxygen;
+                return matter;
             }
 
             set
             {
-                matterOxygen = value;
+                matter = value;
             }
         }
 
-        //getter matterHydrogen
-        public string MatterHydrogen
+        //getter density
+        public static double Density
         {
             get
             {
-                return matterHydrogen;
+                return density;
             }
 
             set
             {
-                matterHydrogen = value;
-            }
-        }
-
-        //getter dansityOxygen
-        public double DansityOxygen
-        {
-            get
-            {
-                return dansityOxygen;
-            }
-
-            set
-            {
-                dansityOxygen = value;
-            }
-        }
-
-        //getter dansityOxygen
-        public double DansityHydrogen
-        {
-            get
-            {
-                return dansityHydrogen;
-            }
-            set
-            {
-                dansityHydrogen = value;
+                density = value;
             }
         }
 
         //Constructor
-        public Substance() { matterOxygen = "oxygen"; dansityOxygen = 1.429; matterHydrogen = "hydrogen"; dansityHydrogen = 0.0696; }
+        public  Substance() { Matter = "oxygen"; Density = 1.429; }
 
-        public Substance (string n, double d, string h, double x) { matterOxygen = n; dansityOxygen = d; matterHydrogen = h; dansityHydrogen = x; }
-
+        public Substance ( string n, double d) { Matter = n; Density = d;}
 
         public override string ToString()
         {
-            return ($" matter : {MatterOxygen};  dansity of oxygen : {DansityOxygen} \n other matter : {MatterHydrogen}; density of hydrogen : {DansityHydrogen}");
+            return ($" matter : {Matter};  density of oxygen : {Density}");
         }
     }
 
-    class Homogeneous_Material
+    public class Material
     {
-        public string Water = "water";
-        public Substance Item = new Substance();
-        public enum Volume {centimeter = 1};
+        public string nameSubstance = Substance.Matter;
 
-        //getter for Volume
-        public class Getter
+        public double densitySubstance = Substance.Density;
+
+
+        private double Volume;
+
+        private string NameMaterial;
+
+        public double volume
         {
-            public Volume volume;
-            public void SetVolume(Volume value)
+            get
             {
-                volume = value;
+                return Volume;
             }
 
-            public Volume GetVolume()
+            set
             {
-               return volume;
+                Volume = value;
             }
         }
+
+        public string nameMaterial
+        {
+            get
+            {
+                return NameMaterial;
+            }
+
+            set
+            {
+                NameMaterial = value;
+            }
+        }
+
+        public Material() { nameMaterial = "water"; volume = 1; }
+        public Material(string n, double x) { nameMaterial = n; volume = x;}
+
+        //static Material Item = new Material();
 
         public double GetMass()
-        {
-            public Volume digital = Volume.centimeter;
-            public double mass = (Item.DansityOxygen + Item.DansityHydrogen) * digital
+        {   
+                return densitySubstance * volume;
         }
-            
+
+        public override string ToString()
+        {
+            return ($"substance: {nameSubstance} density:{densitySubstance}  material: {nameMaterial} mass: {GetMass()}");
+        }
     }
     class Program
     {
         static void Main(string[] args)
         {
-            Substance Item = new Substance();
-            Console.WriteLine(Item);
+            // ToString from class Suvstance
+            Substance.Matter = "steel";
+            Substance.Density = 7.750;
+
+            // ToString from class Material
+            Material Item2 = new Material("wire", 0.03 );
+            Console.WriteLine(Item2);
         }
     }
 }
