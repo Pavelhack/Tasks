@@ -1,0 +1,13 @@
+D:\Паша\source\Tasks\Task_3\Task_3\bin\Debug\netcoreapp3.1\Task_3.exe
+D:\Паша\source\Tasks\Task_3\Task_3\bin\Debug\netcoreapp3.1\Task_3.deps.json
+D:\Паша\source\Tasks\Task_3\Task_3\bin\Debug\netcoreapp3.1\Task_3.runtimeconfig.json
+D:\Паша\source\Tasks\Task_3\Task_3\bin\Debug\netcoreapp3.1\Task_3.runtimeconfig.dev.json
+D:\Паша\source\Tasks\Task_3\Task_3\bin\Debug\netcoreapp3.1\Task_3.dll
+D:\Паша\source\Tasks\Task_3\Task_3\bin\Debug\netcoreapp3.1\Task_3.pdb
+D:\Паша\source\Tasks\Task_3\Task_3\obj\Debug\netcoreapp3.1\Task_3.csprojAssemblyReference.cache
+D:\Паша\source\Tasks\Task_3\Task_3\obj\Debug\netcoreapp3.1\Task_3.AssemblyInfoInputs.cache
+D:\Паша\source\Tasks\Task_3\Task_3\obj\Debug\netcoreapp3.1\Task_3.AssemblyInfo.cs
+D:\Паша\source\Tasks\Task_3\Task_3\obj\Debug\netcoreapp3.1\Task_3.csproj.CoreCompileInputs.cache
+D:\Паша\source\Tasks\Task_3\Task_3\obj\Debug\netcoreapp3.1\Task_3.dll
+D:\Паша\source\Tasks\Task_3\Task_3\obj\Debug\netcoreapp3.1\Task_3.pdb
+D:\Паша\source\Tasks\Task_3\Task_3\obj\Debug\netcoreapp3.1\Task_3.genruntimeconfig.cache

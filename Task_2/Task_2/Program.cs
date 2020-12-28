@@ -4,13 +4,13 @@ namespace Task_2
 {
     class Substance
     {
-        private static string matter ;
-        private static double density ;
+        private string matter ;
+        private double density ;
         
 
 
         //getter matterOxygen
-        public static string Matter
+        public string Matter
         {
             get
             {
@@ -24,7 +24,7 @@ namespace Task_2
         }
 
         //getter density
-        public static double Density
+        public double Density
         {
             get
             {
@@ -38,7 +38,7 @@ namespace Task_2
         }
 
         //Constructor
-        public  Substance() { Matter = "oxygen"; Density = 1.429; }
+        public  Substance() {}
 
         public Substance ( string n, double d) { Matter = n; Density = d;}
 
@@ -50,10 +50,9 @@ namespace Task_2
 
     public class Material
     {
-        public string nameSubstance = Substance.Matter;
+        public string nameSubstance;
 
-        public double densitySubstance = Substance.Density;
-
+        public double densitySubstance;
 
         private double Volume;
 
@@ -85,8 +84,8 @@ namespace Task_2
             }
         }
 
-        public Material() { nameMaterial = "water"; volume = 1; }
-        public Material(string n, double x) { nameMaterial = n; volume = x;}
+        public Material() {}
+        public Material(string n, double x,  double d, string s) { nameMaterial = n; volume = x; densitySubstance = d; nameSubstance = s; }
 
         //static Material Item = new Material();
 
@@ -104,18 +103,17 @@ namespace Task_2
     {
         static void Main(string[] args)
         {
-            // ToString from class Suvstance
-            Substance.Matter = "steel";
-            Substance.Density = 7.750;
+
+            Substance Item = new Substance("steel", 7.750);
 
             // ToString from class Material
-            Material Item2 = new Material("wire", 0.03 );
+            Material Item2 = new Material("wire", 0.03, Item.Density, Item.Matter );
             Console.WriteLine(Item2);
 
-            Substance.Matter = "copper";
-            Substance.Density = 8.96;
+            Item.Matter = "copper";
+            Item.Density = 8.96;
 
-            Material Item3 = new Material("wire", 0.03);
+            Material Item3 = new Material("wire", 0.03, Item.Density, Item.Matter);
             Console.WriteLine(Item3);
 
         }
