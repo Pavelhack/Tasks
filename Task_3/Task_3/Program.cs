@@ -4,33 +4,42 @@ namespace Task_3
 {
     class Purchase: IComparable 
     {
-        private string nameItem = "B";
-
-        //public string NameItem { get; set; }
-        public string NameItem
+        private string NameItem { get; set; }
+        public double Cost { get; set; }
+        public int Amount { get; set; }
+        public enum Days
         {
-            get
-            {
-                return NameItem = nameItem;
-            }
-            set
-            {
-                nameItem = value;
-            }
-
+            Monday,
+            Tuesday,
+            Wednesday,
+            Thursday,
+            Friday,
+            Saturday,
+            Sunday
         }
 
-
         // constructor
-        public Purchase(string nameItem){ this.NameItem = nameItem; }
+        public Purchase(){}
+
+        public Purchase(string N, double C, int A) { NameItem = N; Cost = C; Amount = A;}
+
+        public double GetCost()
+        {
+            return Amount * Cost;
+        }
+        public override string ToString()
+        {
+            return ($"Name of product: {NameItem} Cost of product: {Cost}  Amount total: {Amount} summ total: {GetCost()}");
+        }
 
         public int CompareTo(object obj)
         {
-            Console.WriteLine(this.nameItem);
-            
             Purchase p = obj as Purchase;
+
+            Console.WriteLine(p.Cost);
+            Console.WriteLine(Cost);
             if (p != null)
-                return this.nameItem.CompareTo(p.nameItem);
+                return Cost.CompareTo(p.Cost);
             else
             throw new Exception("unpossible compare both objects");
         }
@@ -40,9 +49,10 @@ namespace Task_3
     {
         static void Main(string[] args)
         {
-            Purchase O = new Purchase("nameItem@");
-            Console.WriteLine(O.NameItem);
-            Console.WriteLine(O.CompareTo(O));
+            Purchase ObjOne = new Purchase("netbook", 300.44, 3);
+            Purchase ObjTwo = new Purchase("iphone", 500.65, 2);
+            
+            Console.WriteLine(ObjOne.CompareTo(ObjTwo));
         }
     }
 }
