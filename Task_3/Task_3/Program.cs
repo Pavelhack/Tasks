@@ -20,9 +20,7 @@ namespace Task_3
         //private const string nameItem = NameItem;
         public double Cost { get; set; }
         public int Amount { get; set; }
-        
 
-        // constructor
         public Purchase() { }
 
         public Purchase(string N, double C, int A, Days D) { NameItem = N; Cost = C; Amount = A; days = D;}
@@ -39,10 +37,9 @@ namespace Task_3
         public int CompareTo(Purchase I)
         {
             Purchase p = I;
-            Console.WriteLine(p.Cost);
-            Console.WriteLine(Cost);
-                return Cost.CompareTo(p.Cost);
+            return Cost.CompareTo(p.Cost) ;
         }
+
     }
 
     class Program
@@ -58,11 +55,20 @@ namespace Task_3
                   new Purchase("X-Box", 740.90, 6, Days.Sunday),
             };
 
-            foreach(object O in purchases)
+            double resultSumm = 0;
+
+            foreach (Purchase O in purchases)
             {
-                Console.WriteLine(O);
+                //Console.WriteLine(O);
+                //resultSumm += O.GetCost();
             }
-           //Arrays.sort(purchases)
+
+            //Console.WriteLine(resultSumm / purchases.Length);
+
+            Array.Sort(purchases);
+
+            Console.WriteLine(purchases[purchases.Length - 1].days);
+            
         }
     }
 }
