@@ -61,13 +61,14 @@ namespace Task_3
             {
                 //Console.WriteLine(O);
                 //resultSumm += O.GetCost();
+                Console.WriteLine(O.CompareTo(purchases[3]));
             }
 
             //Console.WriteLine(resultSumm / purchases.Length);
 
-            Array.Sort(purchases);
+            //Array.Sort(purchases);
 
-            Console.WriteLine(purchases[purchases.Length - 1].days);
+            //Console.WriteLine(purchases[purchases.Length - 1].days);
             
         }
     }
