@@ -61,7 +61,7 @@ namespace Task_3
             {
                 //Console.WriteLine(O);
                 //resultSumm += O.GetCost();
-                Console.WriteLine(O.CompareTo(purchases[3]));
+                Console.WriteLine(O.Cost.CompareTo(purchases[3].Cost));
             }
 
             //Console.WriteLine(resultSumm / purchases.Length);
